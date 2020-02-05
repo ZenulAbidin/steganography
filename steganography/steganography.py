@@ -175,8 +175,9 @@ def main():
         print("Start Encode")
         input_image_path = sys.argv[2]
         output_image_path = sys.argv[3]
-        text = sys.argv[4]
-        Steganography.encode(input_image_path, output_image_path, text)
+        filename = sys.argv[4]
+        f = open(filename)
+        Steganography.encode(input_image_path, output_image_path, f.read())
         print("Finish:{}".format(output_image_path))
         return
     if len(sys.argv) == 3 and sys.argv[1] == '-d':
